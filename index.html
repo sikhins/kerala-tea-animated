@@ -498,8 +498,7 @@ const canvas  = document.getElementById('main-canvas');
 const ctx     = canvas.getContext('2d');
 const tintCvs = document.getElementById('tint-overlay');
 const tintCtx = tintCvs.getContext('2d');
-const isMob   = window.innerWidth <= 768;
-const FRAME_DIR = isMob ? FRAME_DIR_MOB : FRAME_DIR_DESK;
+const FRAME_DIR = FRAME_DIR_DESK;
 
 function resizeCanvas(){
   const dpr = window.devicePixelRatio || 1;
