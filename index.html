@@ -101,6 +101,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:24px 52px; di
 .grad-left { position:absolute; left:0; top:0; bottom:0; width:45%; background:linear-gradient(to right, rgba(16,13,9,.72) 0%, transparent 100%); pointer-events:none; z-index:1; }
 .grad-bottom { position:absolute; left:0; right:0; bottom:0; height:30%; background:linear-gradient(to top, rgba(16,13,9,.65) 0%, transparent 100%); pointer-events:none; z-index:1; }
 #tint-overlay { position:absolute; inset:0; pointer-events:none; z-index:5; opacity:0; transition:opacity .6s; }
+#dark-overlay { position:absolute; inset:0; background:rgba(0,0,0,.38); pointer-events:none; z-index:2; }
 
 /* SCROLL TEXT OVERLAYS */
 .scroll-text {
@@ -254,6 +255,7 @@ footer { background:#090807; padding:48px 8vw; text-align:center; border-top:1px
 <section id="anim-section">
   <div class="canvas-wrap">
     <canvas id="main-canvas"></canvas>
+    <div id="dark-overlay"></div>
     <div class="grad-left"></div>
     <div class="grad-bottom"></div>
     <canvas id="tint-overlay"></canvas>
