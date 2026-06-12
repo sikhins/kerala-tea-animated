@@ -559,7 +559,7 @@ function getNearestFrame(idx){
 function drawFrame(idx){
   const img=getNearestFrame(Math.max(0,Math.min(FRAME_COUNT-1,idx)));
   if(!img) return;
-  const cw=canvas.width, ch=canvas.height;
+  const cw=window.innerWidth, ch=window.innerHeight;
   const iw=img.naturalWidth||img.width, ih=img.naturalHeight||img.height;
   const scale=Math.max(cw/iw, ch/ih);
   const dw=iw*scale, dh=ih*scale;
@@ -616,7 +616,7 @@ function updateTint(prog){
   const r=Math.round(c1[0]+(c2[0]-c1[0])*secProg);
   const g=Math.round(c1[1]+(c2[1]-c1[1])*secProg);
   const b=Math.round(c1[2]+(c2[2]-c1[2])*secProg);
-  const cw=tintCvs.width, ch=tintCvs.height;
+  const cw=window.innerWidth, ch=window.innerHeight;
   tintCtx.clearRect(0,0,cw,ch);
   const grad=tintCtx.createLinearGradient(0,0,cw*0.4,ch);
   grad.addColorStop(0,`rgba(${r},${g},${b},0.06)`);
