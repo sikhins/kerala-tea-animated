@@ -502,8 +502,14 @@ const isMob   = window.innerWidth <= 768;
 const FRAME_DIR = isMob ? FRAME_DIR_MOB : FRAME_DIR_DESK;
 
 function resizeCanvas(){
-  canvas.width  = tintCvs.width  = window.innerWidth;
-  canvas.height = tintCvs.height = window.innerHeight;
+  const dpr = window.devicePixelRatio || 1;
+  const w = window.innerWidth, h = window.innerHeight;
+  canvas.width  = tintCvs.width  = w * dpr;
+  canvas.height = tintCvs.height = h * dpr;
+  canvas.style.width  = tintCvs.style.width  = w + 'px';
+  canvas.style.height = tintCvs.style.height = h + 'px';
+  ctx.scale(dpr, dpr);
+  tintCtx.scale(dpr, dpr);
 }
 resizeCanvas(); window.addEventListener('resize', resizeCanvas);
 
